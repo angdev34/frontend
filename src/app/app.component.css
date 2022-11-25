@@ -1,0 +1,15 @@
+.background {
+  background: rgb(206, 222, 237);
+  background: linear-gradient(
+      90deg,
+      rgba(206, 222, 237, 1) 0%,
+      rgba(239, 241, 226, 1) 50%,
+      rgba(206, 222, 237, 1) 100%
+    )
+  /*   no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+}
+

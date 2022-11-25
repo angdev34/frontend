@@ -1,0 +1,52 @@
+//add complaint form
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Add a complaint</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="addComplaintForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <input matInput placeholder="Complaint" formControlName="complaint">
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!addComplaintForm.valid">Submit</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+//add wish form
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Add a wish</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="addWishForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <input matInput placeholder="Wish" formControlName="wish">
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!addWishForm.valid">Submit</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+//wish and complaint list
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Wishes and Complaints</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let wish of wishes; let i = index">
+        <h4 matLine>{{wish}}</h4>
+        <button mat-icon-button (click)="onDeleteWish(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-list-item>
+      <mat-list-item *ngFor="let complaint of complaints; let i = index">
+        <h4 matLine>{{complaint}}</h4>
+        <button mat-icon-button (click)="onDeleteComplaint(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
